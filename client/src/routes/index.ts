@@ -4,8 +4,8 @@ import TrainingPage from "../page/Training";
 
 type RouteType = {
   path: string;
-  element: () => React.ReactNode;
-  layout?: () => React.ReactNode;
+  element: () => JSX.Element;
+  layout?: () => JSX.Element;
 };
 
 const publicRoutes: RouteType[] = [
