@@ -16,10 +16,10 @@ const NavTab = ({ icon: Icon, to, children, onClick }: PropsType) => {
         onClick && onClick(e);
         navigate(to);
       }}
-      className="px-4 py-2 flex items-center"
+      className="px-4 py-2 flex items-center transition border-b-2 border-transparent hover:border-primary-color hover:text-primary-color"
     >
-      <span className="mr-1">{children}</span>
-      {Icon && <Icon />}
+      <span className="uppercase text-md tracking-wide">{children}</span>
+      {Icon && <Icon size="1.3rem" />}
     </button>
   );
 };

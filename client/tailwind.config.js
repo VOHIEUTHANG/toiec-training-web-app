@@ -8,6 +8,7 @@ module.exports = {
     colors: {
       "primary-color": "#43cfd9",
       "secondary-color": "#74d14c",
+      transparent: "transparent",
       main: "#fff",
       blue: "#1fb6ff",
       purple: "#7e5bef",

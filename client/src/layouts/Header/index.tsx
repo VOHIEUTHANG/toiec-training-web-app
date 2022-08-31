@@ -1,31 +1,50 @@
 import NavTab from "../../components/NavTab";
-import { DownOutlined } from "@ant-design/icons";
-// import logoUrl from "../../assets/images/logos/logo-full.png";
+import logoUrl from "../../assets/images/logos/logo-full.png";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+type PropsType = {
+  isLogined?: boolean;
+};
+
+const Header = ({ isLogined = false }: PropsType) => {
   return (
-    <header
-      id="header"
-      className="h-[70px] flex items-center justify-between bg-main shadow sticky top-0"
-    >
+    <header id="header" className=" bg-main shadow sticky top-0">
       <div className="container">
-        <div className="header-wrapper">
+        <div className="header-wrapper flex h-[70px]  items-center justify-between">
           <div className="logo">
-            <img src="" alt="" />
+            <Link to="/">
+              <img className="max-h-[60px]" src={logoUrl} alt="" />
+            </Link>
           </div>
-          <div className="nav">
-            <ul className="nav-list flex">
-              <NavTab to="/">Home</NavTab>
-              <NavTab to="/training" icon={DownOutlined}>
-                Traning
-              </NavTab>
-              <NavTab to="/test-exam" icon={DownOutlined}>
-                Đề thi thử
-              </NavTab>
-              <NavTab to="/toiec-tips">Toiec Tip</NavTab>
+          <div className="nav h-full">
+            <ul className="nav-list flex h-full">
+              <NavTab to="/training">Traning</NavTab>
+              <NavTab to="/test-exam">Mock Test</NavTab>
+              <NavTab to="/toiec-tips">Toiec Tips</NavTab>
+              <NavTab to="/toiec-tips">Documents</NavTab>
             </ul>
           </div>
-          <div className="user"></div>
+          <div className="user">
+            {isLogined ? (
+              <div>Login</div>
+            ) : (
+              <div>
+                <Link
+                  className="hover:underline uppercase hover:text-primary-color"
+                  to="/user/login"
+                >
+                  Login
+                </Link>
+                <span> / </span>
+                <Link
+                  className="hover:underline uppercase hover:text-primary-color"
+                  to="/user/register"
+                >
+                  Register
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </header>
