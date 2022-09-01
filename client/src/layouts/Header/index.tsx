@@ -19,9 +19,9 @@ const Header = ({ isLogined = false }: PropsType) => {
           <div className="nav h-full">
             <ul className="nav-list flex h-full">
               <NavTab to="/training">Traning</NavTab>
-              <NavTab to="/test-exam">Mock Test</NavTab>
+              <NavTab to="/mock-test">Mock Test</NavTab>
               <NavTab to="/toiec-tips">Toiec Tips</NavTab>
-              <NavTab to="/toiec-tips">Documents</NavTab>
+              <NavTab to="/documents">Documents</NavTab>
             </ul>
           </div>
           <div className="user">
