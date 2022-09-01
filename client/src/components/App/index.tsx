@@ -1,10 +1,15 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { publicRoutes } from "../../routes";
 import mainLayout from "../../layouts/MainLayout";
+import GoToTop from "../GoToTop";
 import "./style.css";
 
 function App() {
+  const [showGoToTop, setShowGoToTop] = useState(false);
+  useEffect(() => {
+    window.onscroll = () => setShowGoToTop(window.scrollY > 100);
+  }, []);
   return (
     <div className="app">
       <Routes>
@@ -24,6 +29,7 @@ function App() {
           );
         })}
       </Routes>
+      {showGoToTop && <GoToTop />}
     </div>
   );
 }
