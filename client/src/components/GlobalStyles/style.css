@@ -9,3 +9,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 6px;
   background: #d0d0d0;
 }
+
+html {
+  scroll-behavior: smooth;
+}
