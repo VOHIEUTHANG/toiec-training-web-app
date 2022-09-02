@@ -18,7 +18,9 @@ const NavTab = ({ icon: Icon, to, children, onClick }: PropsType) => {
       }}
       className="px-4 py-2 flex items-center transition border-b-2 border-transparent hover:border-primary-color hover:text-primary-color"
     >
-      <span className="uppercase text-md tracking-wide">{children}</span>
+      <span className="uppercase text-md tracking-wide whitespace-nowrap">
+        {children}
+      </span>
       {Icon && <Icon size="1.3rem" />}
     </button>
   );

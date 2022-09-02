@@ -4,7 +4,11 @@ module.exports = {
     container: {
       center: true,
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        "3xl": "0 4px 20px 2px rgba(0, 0, 0, 0.05)",
+      },
+    },
     colors: {
       "primary-color": "#43cfd9",
       "secondary-color": "#74d14c",

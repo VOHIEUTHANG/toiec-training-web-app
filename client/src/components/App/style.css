@@ -1,11 +1,20 @@
-@import "~antd/dist/antd.css";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "~antd/dist/antd.css";
 
 @layer base {
   body {
     font-family: "Rubik", sans-serif;
   }
+}
+.page-wrapper {
+  @apply py-8;
+}
+.form-container {
+  @apply p-8 rounded-xl shadow-lg min-w-[600px];
+}
+.form-title {
+  @apply uppercase text-2xl text-center mb-6 tracking-wide;
 }
