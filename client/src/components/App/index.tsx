@@ -11,7 +11,7 @@ function App() {
     window.onscroll = () => setShowGoToTop(window.scrollY > 100);
   }, []);
   return (
-    <div className="app">
+    <div className="app flex flex-col min-h-screen">
       <Routes>
         {publicRoutes.map((route, index) => {
           const Element = route.element;

@@ -1,0 +1,58 @@
+@import "../../assets/scss/variable";
+@import "../../assets/scss/mixin";
+
+body::-webkit-scrollbar-track {
+  background-color: #f9f9f9;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f9f9f9;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: #d0d0d0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  outline: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* OVERWRITE CSS OF ANTD */
+
+.ant-btn-link span {
+  text-decoration: underline;
+  color: $color-text-gray;
+  @include transition;
+  &:hover {
+    color: #43cfd9;
+  }
+}
+.ant-btn-lg {
+  height: 45.2px;
+  padding: 9px 28px;
+  font-size: 16px;
+  border-radius: 2px;
+}

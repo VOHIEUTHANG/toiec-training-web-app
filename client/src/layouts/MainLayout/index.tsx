@@ -12,7 +12,7 @@ const MainLayout = ({ children }: PropsType) => {
   return (
     <>
       <Header />
-      <Content>{children}</Content>
+      <Content className="grow flex items-stretch">{children}</Content>
       <Footer />
     </>
   );
