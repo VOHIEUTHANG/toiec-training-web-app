@@ -50,9 +50,17 @@ li {
     color: #43cfd9;
   }
 }
+
 .ant-btn-lg {
   height: 45.2px;
   padding: 9px 28px;
   font-size: 16px;
   border-radius: 2px;
+}
+
+.ant-form-item-explain-error {
+  padding: 3px 0;
+}
+.ant-form-item {
+  margin-bottom: 28px;
 }
