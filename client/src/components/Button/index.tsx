@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button as ButtonAntd } from "antd";
+import { useNavigate } from "react-router-dom";
 
 type PropsType = {
   children: string;
@@ -13,9 +14,11 @@ type PropsType = {
   rounded?: number;
   htmlType?: "submit";
   block?: boolean;
+  onClick?: () => void;
 };
 
 const Button = (props: PropsType) => {
+  const navigate = useNavigate();
   const { children, ...excludeChildrenProp } = props;
   const expectProps: { [key: string]: any } = {};
   const styles: { [key: string]: any } = {};
@@ -35,6 +38,11 @@ const Button = (props: PropsType) => {
         break;
       case "rounded":
         styles.boderRadius = `${value}px`;
+        break;
+      case "href":
+        expectProps.onClick = () => {
+          navigate(value as string);
+        };
         break;
       default:
         expectProps[key] = value;

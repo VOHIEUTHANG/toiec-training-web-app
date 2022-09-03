@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Form, Input } from "antd";
 import Button from "../../components/Button";
 
@@ -44,8 +43,12 @@ const Login = () => {
             </Form.Item>
 
             <div className="flex justify-between">
-              <Button type="link">Create account</Button>
-              <Button type="link">Return home</Button>
+              <Button type="link" href="/user/register">
+                Create account
+              </Button>
+              <Button type="link" href="/">
+                Return home
+              </Button>
             </div>
 
             <Form.Item wrapperCol={{ offset: 10, span: 16 }}>

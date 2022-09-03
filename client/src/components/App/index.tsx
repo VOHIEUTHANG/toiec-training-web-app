@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { publicRoutes } from "../../routes";
 import mainLayout from "../../layouts/MainLayout";
 import GoToTop from "../GoToTop";
-import "./style.css";
+import "./style.scss";
 
 function App() {
   const [showGoToTop, setShowGoToTop] = useState(false);
