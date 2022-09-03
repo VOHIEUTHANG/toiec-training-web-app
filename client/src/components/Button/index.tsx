@@ -23,37 +23,31 @@ const Button = (props: PropsType) => {
   const expectProps: { [key: string]: any } = {};
   const styles: { [key: string]: any } = {};
 
-  useEffect(() => {
-    for (let key in excludeChildrenProp) {
-      const value =
-        excludeChildrenProp[key as keyof typeof excludeChildrenProp];
-      switch (key) {
-        case "size":
-          expectProps.size =
-            value === "lg" ? "large" : value === "md" ? "middle" : "small";
-          break;
-        case "type":
-          expectProps.type = value === "outline" ? "ghost" : value;
-          break;
-        case "background":
-          styles.backgroundColor = value;
-          break;
-        case "rounded":
-          styles.boderRadius = `${value}px`;
-          break;
-        // case "href":
-        //   expectProps.onClick = () => {
-        //     console.log(value);
-        //     navigate(value as string);
-        //   };
-        //   break;
-        default:
-          expectProps[key] = value;
-      }
+  for (let key in excludeChildrenProp) {
+    const value = excludeChildrenProp[key as keyof typeof excludeChildrenProp];
+    switch (key) {
+      case "size":
+        expectProps.size =
+          value === "lg" ? "large" : value === "md" ? "middle" : "small";
+        break;
+      case "type":
+        expectProps.type = value === "outline" ? "ghost" : value;
+        break;
+      case "background":
+        styles.backgroundColor = value;
+        break;
+      case "rounded":
+        styles.boderRadius = `${value}px`;
+        break;
+      case "href":
+        expectProps.onClick = () => {
+          navigate(value as string);
+        };
+        break;
+      default:
+        expectProps[key] = value;
     }
-  });
-
-  console.log("expectProps ===> ", expectProps);
+  }
 
   return (
     <ButtonAntd className="my-btn" {...expectProps} style={styles}>

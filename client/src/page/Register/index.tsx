@@ -29,6 +29,10 @@ const Register = () => {
               name="username"
               rules={[
                 { required: true, message: "Please input your username!" },
+                {
+                  min: 4,
+                  message: "Username must be at least 4 characters!",
+                },
               ]}
             >
               <Input />
@@ -39,6 +43,10 @@ const Register = () => {
               name="name"
               rules={[
                 { required: true, message: "Please input your full name!" },
+                {
+                  min: 2,
+                  message: "Username must be at least 2 characters!",
+                },
               ]}
             >
               <Input />
@@ -50,7 +58,7 @@ const Register = () => {
               rules={[
                 { required: true, message: "Please input your full name!" },
                 {
-                  pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                  type: "email",
                   message: "Invalid email type!",
                 },
               ]}
@@ -66,27 +74,48 @@ const Register = () => {
                   required: true,
                   message: "Please input your password!",
                 },
+                {
+                  min: 6,
+                  message: "Password must be at least 6 characters!",
+                },
               ]}
+              hasFeedback
             >
               <Input.Password />
             </Form.Item>
 
             <Form.Item
-              label="Configm password"
               name="confirmPassword"
+              label="Configm password"
+              dependencies={["password"]}
+              hasFeedback
               rules={[
                 {
                   required: true,
                   message: "Please input your configm password!",
                 },
+                ({ getFieldValue }) => ({
+                  validator(rule, value) {
+                    if (!value || getFieldValue("password") === value) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject(
+                      "The two passwords that you entered do not match!"
+                    );
+                  },
+                }),
               ]}
             >
               <Input.Password />
             </Form.Item>
 
             <div className="flex justify-between">
-              <Button type="link">Available acccount</Button>
-              <Button type="link">Return home</Button>
+              <Button type="link" href="/user/login">
+                Available acccount
+              </Button>
+              <Button type="link" href="/">
+                Return home
+              </Button>
             </div>
 
             <Form.Item wrapperCol={{ offset: 10, span: 16 }}>
