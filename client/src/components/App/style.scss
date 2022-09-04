@@ -18,3 +18,12 @@
 .form-title {
   @apply uppercase text-2xl text-center mb-6 tracking-wide;
 }
+.img-styles {
+  @apply w-full h-full object-cover select-none;
+}
+.title {
+  @apply text-center text-3xl uppercase mb-4 font-medium;
+}
+.subtitle {
+  @apply text-center text-xl  mb-4 text-txt-light;
+}

@@ -8,10 +8,10 @@ import "./style.scss";
 function App() {
   const [showGoToTop, setShowGoToTop] = useState(false);
   useEffect(() => {
-    window.onscroll = () => setShowGoToTop(window.scrollY > 100);
+    window.onscroll = () => setShowGoToTop(window.scrollY > 200);
   }, []);
   return (
-    <div className="app flex flex-col min-h-screen">
+    <div className="app flex flex-col min-h-screen overflow-x-hidden">
       <Routes>
         {publicRoutes.map((route, index) => {
           const Element = route.element;
