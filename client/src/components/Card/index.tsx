@@ -11,14 +11,14 @@ export type PropsTypes = {
 
 const Card = ({ href, imgUrl, part, title, content }: PropsTypes) => {
   return (
-    <Link to={href}>
+    <Link to={href} className="h-full">
       <CardAntd
-        className="rounded-md overflow-hidden"
+        className="rounded-md overflow-hidden h-full"
         hoverable
         cover={
           <div className="overflow-hidden group">
             <img
-              className="img-styles max-h-[300px] transition-all ease-in-out duration-500 group-hover:scale-125"
+              className="object-cover w-full h-[190px] transition-all ease-in-out duration-500 group-hover:scale-125"
               alt="Photographs"
               src={
                 imgUrl ??
@@ -30,7 +30,7 @@ const Card = ({ href, imgUrl, part, title, content }: PropsTypes) => {
       >
         <div className="">
           <h3 className="mb-1 font-semibold text-lg">Part {part}</h3>
-          <p className="mb-2 font-semibold text-xl">{title}</p>
+          <p className="mb-2 font-semibold text-xl line-clamp-1">{title}</p>
           <p className="text-txt-light font-light mt-1 text-base line-clamp-5">
             {content}
           </p>
