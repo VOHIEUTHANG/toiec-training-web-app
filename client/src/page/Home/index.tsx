@@ -49,7 +49,7 @@ const HomePage = () => {
           <Banner />
         </div>
         <div className="container">
-          <div className="main py-4">
+          <div className="main py-4 overflow-x-hidden">
             <div className="main-heading my-6 px-8">
               <h1 className="title">
                 Start Your FREE TOEIC Practice Test 2022
@@ -60,13 +60,13 @@ const HomePage = () => {
                 for your upcoming TOEIC exam!
               </div>
             </div>
-            <div className="main-body py-4">
+            <div className="main-body py-4 ">
               <Section title="Listening">
                 <Cardlist cardList={cardList} />
               </Section>
-              <Section title="Reading">
+              {/* <Section title="Reading">
                 <Cardlist cardList={cardList} />
-              </Section>
+              </Section> */}
             </div>
           </div>
         </div>
