@@ -4,6 +4,17 @@ module.exports = {
     container: {
       center: true,
     },
+    screens: {
+      sm: "576px",
+
+      md: "768px",
+
+      lg: "992px",
+
+      xl: "1200px",
+
+      "2xl": "1280px",
+    },
     extend: {
       boxShadow: {
         "3xl": "0 4px 20px 2px rgba(0, 0, 0, 0.05)",
@@ -12,7 +23,9 @@ module.exports = {
     colors: {
       "primary-color": "#43cfd9",
       "secondary-color": "#74d14c",
+      "primary-color-strong": "#42979d",
       transparent: "transparent",
+      "txt-light": "#505050",
       main: "#fff",
       blue: "#1fb6ff",
       purple: "#7e5bef",
@@ -25,5 +38,5 @@ module.exports = {
       "gray-light": "#d3dce6",
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };

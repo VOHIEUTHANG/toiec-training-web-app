@@ -8,7 +8,7 @@ type PropsType = {
 
 const Header = ({ isLogined = false }: PropsType) => {
   return (
-    <header id="header" className=" bg-main shadow sticky top-0">
+    <header id="header" className=" bg-main shadow sticky top-0 z-50">
       <div className="container">
         <div className="header-wrapper flex h-[70px]  items-center justify-between">
           <div className="logo">

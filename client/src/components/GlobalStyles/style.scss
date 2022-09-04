@@ -39,9 +39,11 @@ select {
 li {
   list-style-type: none;
 }
-
+// Shared styles
+.container-full {
+  width: 100vw;
+}
 /* OVERWRITE CSS OF ANTD */
-
 .ant-btn-link span {
   text-decoration: underline;
   color: $color-text-gray;
@@ -63,4 +65,13 @@ li {
 }
 .ant-form-item {
   margin-bottom: 28px;
+}
+.swiper-pagination-bullet {
+  background-color: white;
+}
+.ant-card-body {
+  padding: 1rem;
+}
+.ant-card-hoverable:hover {
+  // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
