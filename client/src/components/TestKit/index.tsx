@@ -8,14 +8,18 @@ export type PropsType = {
 };
 
 const TestKit = ({ href, name, descriptions, backgroundImgUrl }: PropsType) => {
+  let containerClasses = "p-6 shadow-sm rounded-md ";
+  const containerStyles: { [key: string]: any } = {};
+  if (backgroundImgUrl) {
+    containerClasses += `bg-center bg-no-repeat bg-cover`;
+    containerStyles.backgroundImage = `url(${backgroundImgUrl})`;
+  } else {
+    containerClasses +=
+      "bg-gradient-to-tr from-primary-color to-secondary-color";
+  }
+
   return (
-    <div
-      className={`p-6 shadow-sm rounded-md ${
-        backgroundImgUrl
-          ? `bg-[url(${backgroundImgUrl})] bg-center bg-no-repeat bg-cover`
-          : "bg-gradient-to-tr from-primary-color to-secondary-color"
-      }`}
-    >
+    <div style={containerStyles} className={containerClasses}>
       <div className="p-2 mb-2">
         <p className="font-semibold text-2xl mb-4 uppercase text-white tracking-wider">
           {name}

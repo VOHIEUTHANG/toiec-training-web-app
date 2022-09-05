@@ -81,6 +81,8 @@ const testKitList: TestKitListType = [
     name: "full",
     descriptions:
       "Take full test with the same number of questions and time limit as the actual test",
+    backgroundImgUrl:
+      "https://toeic-testpro.com/_next/image/?url=%2Fimages%2Fapp%2Ftoeic%2Ffull-test.png&w=1920&q=75",
   },
 ];
 
