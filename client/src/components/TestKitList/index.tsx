@@ -12,7 +12,7 @@ const TestKitList = ({ testKitList }: PropsType) => {
       <Row gutter={[16, 16]}>
         {testKitList.map((test, index) => {
           return (
-            <Col key={index} xs={24} sm={24} md={12} lg={8} xl={8}>
+            <Col key={index} xs={24} sm={24} md={12} lg={12} xl={8}>
               <TestKit {...test} />
             </Col>
           );
