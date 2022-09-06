@@ -1,6 +1,5 @@
 import Cardlist from "../../components/CardList";
 import Section from "../../components/Section";
-import TestKitList from "../../components/TestKitList";
 import { listeningTestList, readingTestList, testKitList } from "../../data";
 import PageFrame from "../../components/PageFrame";
 
