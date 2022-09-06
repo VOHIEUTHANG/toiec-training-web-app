@@ -2,7 +2,7 @@ import { CardListType } from "../components/CardList";
 import { TestKitListType } from "../components/TestKitList";
 const listeningTestList: CardListType = [
   {
-    href: "/test/listening/part-1",
+    href: "/training/listening/part-1",
     part: 1,
     title: "Photographs",
     content:
@@ -11,7 +11,7 @@ const listeningTestList: CardListType = [
       "https://images.unsplash.com/photo-1548502499-ef49e8cf98d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&w=1000&q=80",
   },
   {
-    href: "/test/listening/part-2",
+    href: "/training/listening/part-2",
     part: 2,
     title: "Question - Response",
     content:
@@ -20,7 +20,7 @@ const listeningTestList: CardListType = [
       "https://arrivein.com/wp-content/uploads/2020/07/Blog-Banner-Job-interview-questions.jpg",
   },
   {
-    href: "/test/listening/part-3",
+    href: "/training/listening/part-3",
     part: 3,
     title: "Short Conversations",
     content:
@@ -29,7 +29,7 @@ const listeningTestList: CardListType = [
       "https://cdn.shrm.org/image/upload/c_crop%2Ch_386%2Cw_686%2Cx_0%2Cy_59/c_fit%2Cf_auto%2Cq_auto%2Cw_767/v1/Competencies/conversation_isrprn?databtoa=eyIxNng5Ijp7IngiOjAsInkiOjU5LCJ4MiI6Njg2LCJ5MiI6NDQ0LCJ3Ijo2ODYsImgiOjM4Nn19",
   },
   {
-    href: "/test/listening/part-4",
+    href: "/training/listening/part-4",
     part: 4,
     title: "Short Talks",
     content:
@@ -40,7 +40,7 @@ const listeningTestList: CardListType = [
 ];
 const readingTestList: CardListType = [
   {
-    href: "/test/reading/part-5",
+    href: "/training/reading/part-5",
     part: 5,
     title: "Incomplete Sentences",
     content:
@@ -49,7 +49,7 @@ const readingTestList: CardListType = [
       "https://www.masterclass.com/cdn-cgi/image/width=828,quality=75,format=webp/https://images.ctfassets.net/3s5io6mnxfqz/3QSruYage5D2d9ZJ4fg5Ir/b4a3bb428de80f7f404130eb67e789a7/AdobeStock_142817078.jpeg",
   },
   {
-    href: "/test/reading/part-6",
+    href: "/training/reading/part-6",
     part: 6,
     title: "Text Completion",
     content:
@@ -58,7 +58,7 @@ const readingTestList: CardListType = [
       "https://document360.com/wp-content/uploads/2019/08/blogimage11-e1564751826368.jpg",
   },
   {
-    href: "/test/reading/part-7",
+    href: "/training/reading/part-7",
     part: 7,
     title: "Reading Comprehension",
     content:
@@ -69,7 +69,7 @@ const readingTestList: CardListType = [
 ];
 const testKitList: TestKitListType = [
   {
-    href: "/test/mini",
+    href: "/mock-test/mini",
     name: "mini",
     descriptions:
       "Take mini test with the number of questions and time limit reduced by half",
@@ -77,7 +77,7 @@ const testKitList: TestKitListType = [
       "https://toeic-testpro.com/_next/image/?url=%2Fimages%2Fapp%2Ftoeic%2Fmini-test.png&w=1920&q=75",
   },
   {
-    href: "/test/full",
+    href: "/mock-test/full",
     name: "full",
     descriptions:
       "Take full test with the same number of questions and time limit as the actual test",

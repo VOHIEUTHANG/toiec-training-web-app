@@ -1,12 +1,19 @@
-import React from "react";
+import Cardlist from "../../components/CardList";
+import Section from "../../components/Section";
+import TestKitList from "../../components/TestKitList";
+import { listeningTestList, readingTestList, testKitList } from "../../data";
+import PageFrame from "../../components/PageFrame";
 
 const TrainingPage = () => {
   return (
-    <div className="container">
-      <div className="flex flex-col justify-center items-center h-full">
-        Training Page
-      </div>
-    </div>
+    <PageFrame>
+      <Section title="Listening">
+        <Cardlist cardList={listeningTestList} />
+      </Section>
+      <Section title="Reading">
+        <Cardlist cardList={readingTestList} />
+      </Section>
+    </PageFrame>
   );
 };
 

@@ -24,7 +24,9 @@ const TestKit = ({ href, name, descriptions, backgroundImgUrl }: PropsType) => {
         <p className="font-semibold text-2xl mb-4 uppercase text-white tracking-wider">
           {name}
         </p>
-        <p className="text-white text-lg text-shadow">{descriptions}</p>
+        <p className="text-white text-lg text-shadow line-clamp-2">
+          {descriptions}
+        </p>
       </div>
       <div className="flex justify-end">
         <Link to={href}>

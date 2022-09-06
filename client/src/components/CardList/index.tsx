@@ -11,7 +11,7 @@ type PropsType = {
 const CardList = ({ cardList }: PropsType) => {
   return (
     <div>
-      <Row className="px-2" gutter={[16, 16]}>
+      <Row gutter={[16, 16]}>
         {cardList.map((test, index) => {
           return (
             <Col key={index} lg={6} md={8} sm={12} xs={24}>
