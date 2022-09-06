@@ -18,8 +18,47 @@ const Header = ({ isLogined = false }: PropsType) => {
           </div>
           <div className="nav h-full">
             <ul className="nav-list flex h-full">
-              <NavTab to="/training">Traning</NavTab>
-              <NavTab to="/mock-test">Mock Test</NavTab>
+              <NavTab
+                dropDown={[
+                  { href: "/training/listening/part-1", title: "Photographs" },
+                  {
+                    href: "/training/listening/part-2",
+                    title: "Question - Response",
+                  },
+                  {
+                    href: "/training/listening/part-3",
+                    title: "Short Conversations",
+                  },
+                  { href: "/training/listening/part-4", title: "Short Talks" },
+                  {
+                    href: "/training/reading/part-5",
+                    title: "Incomplete Sentences",
+                  },
+                  {
+                    href: "/training/reading/part-6",
+                    title: "Text Completion",
+                  },
+                  {
+                    href: "/training/reading/part-7",
+                    title: "Reading Comprehension",
+                  },
+                ]}
+                to="/training"
+              >
+                Traning
+              </NavTab>
+              <NavTab
+                dropDown={[
+                  { href: "/mock-test/mini", title: "Mini Test" },
+                  {
+                    href: "/mock-test/full",
+                    title: "Full Test",
+                  },
+                ]}
+                to="/mock-test"
+              >
+                Mock Test
+              </NavTab>
               <NavTab to="/toiec-tips">Toiec Tips</NavTab>
               <NavTab to="/documents">Documents</NavTab>
             </ul>
