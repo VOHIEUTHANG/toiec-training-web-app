@@ -37,7 +37,7 @@ const Button = (props: PropsType) => {
         styles.backgroundColor = value;
         break;
       case "rounded":
-        styles.boderRadius = `${value}px`;
+        styles.borderRadius = value;
         break;
       case "href":
         expectProps.onClick = () => {
@@ -50,7 +50,11 @@ const Button = (props: PropsType) => {
   }
 
   return (
-    <ButtonAntd className="my-btn" {...expectProps} style={styles}>
+    <ButtonAntd
+      className="my-btn flex items-center"
+      {...expectProps}
+      style={styles}
+    >
       {children}
     </ButtonAntd>
   );

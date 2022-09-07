@@ -27,3 +27,9 @@
 .subtitle {
   @apply text-center text-xl  mb-4;
 }
+.page-title {
+  @apply text-center uppercase text-4xl font-semibold mb-8 text-slate-600;
+}
+.paper {
+  @apply border border-slate-200 rounded-xl p-4 bg-white;
+}
