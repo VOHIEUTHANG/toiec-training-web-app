@@ -1,7 +1,9 @@
 import express from "express";
-const router = express.Router();
 import Blog from "../models/blog";
+import BlogController from "../controller/blog.controller";
+const router = express.Router();
 
+router.get("/", BlogController.getBlogPage);
 router.get("/add", (req, res) => {
   const blog = new Blog({
     title: "new blog 2",
@@ -16,10 +18,11 @@ router.get("/add", (req, res) => {
     })
     .catch((err) => console.log(err));
 });
-
-router.get("/get-all", (req, res) => {
-  Blog.find()
-    .then((result) => res.json({ result }))
+router.get("/single", (req, res) => {
+  Blog.findById("6319bba0e4d37777c953fb0f")
+    .then((result) => {
+      res.json({ data: result });
+    })
     .catch((err) => console.log(err));
 });
 
