@@ -1,0 +1,19 @@
+<html lang="en">
+  <head>
+    <%- include('../partials/head') %>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <div style="margin-top: 80px" class="container">
+    <h1 class="text-center">All blogs data</h1>
+      <ul>
+        <% blogs.forEach(blog=>{ %>
+        <li styles="margin:4px 0;"">
+          <div><%= blog.title %></div>
+          <div><%= blog.body %></div>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </body>
+</html>
