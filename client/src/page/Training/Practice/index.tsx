@@ -124,7 +124,10 @@ const PracticePage = () => {
                 </div>
               </div>
               <div className="flex justify-center my-6">
-                <audio controls src=""></audio>
+                <audio
+                  controls
+                  src="https://storage.googleapis.com/kstoeic/sound/eco2018_Test04_0101.mp3"
+                ></audio>
               </div>
               <div className="mx-8 my-4">
                 <Radio.Group
