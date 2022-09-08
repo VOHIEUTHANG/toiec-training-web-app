@@ -5,8 +5,9 @@ import MockTestPage from "../page/MockTest";
 import DocumentsPage from "../page/Documents";
 import LoginPage from "../page/Login";
 import RegisterPage from "../page/Register";
-import TrainingListeningDetail from "../page/TrainingListeningDetail";
-import TrainingReadingDetail from "../page/TrainingReadingDetail";
+import TrainingListeningDetail from "../page/Training/Listening";
+import TrainingReadingDetail from "../page/Training/Reading";
+import TrainingPractive from "../page/Training/Practice";
 type RouteType = {
   path: string;
   element: () => JSX.Element;
@@ -24,6 +25,10 @@ const publicRoutes: RouteType[] = [
   { path: "/user/register", element: RegisterPage },
   { path: "/training/listening/:partID", element: TrainingListeningDetail },
   { path: "/training/reading/:partID", element: TrainingReadingDetail },
+  {
+    path: "/training/practice/:partID/:testID",
+    element: TrainingPractive,
+  },
 ];
 
 const privateRoutes: RouteType[] = [];

@@ -72,8 +72,14 @@ li {
 .ant-card-body {
   padding: 1rem;
 }
-.ant-card-hoverable:hover {
-  // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+.ant-radio-wrapper {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  @include transition;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 }
 .text-shadow {
   text-shadow: 2px 2px 20px rgb(71, 66, 66) !important;

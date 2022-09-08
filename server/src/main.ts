@@ -1,13 +1,18 @@
 import express from "express";
+import configs from "./configs";
+import initRoutes from "./routes";
+import connectMongoDB from "./database/connectDB";
+import dotenv from "dotenv";
+dotenv.config();
+
 const app = express();
+configs(app);
+initRoutes(app);
 
-app.get("/", function (req, res) {
-  res.send("Nodejs + Typescript ");
-});
-
-app.listen(3000, () => {
-  console.log(`Server is listening on URL: http://localhost:${3000}`);
-});
-
-const sayHi = (name: string) => console.log(`HI ${name}, nice to meet you !`);
-sayHi("Devostack 25/12/2000");
+const PORT = process.env.PORT ?? 3000;
+(async () => {
+  await connectMongoDB();
+  app.listen(PORT, () => {
+    console.log(`Server is listening on URL: http://localhost:${PORT}`);
+  });
+})();

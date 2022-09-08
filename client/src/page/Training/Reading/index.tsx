@@ -1,5 +1,5 @@
 import React from "react";
-import PageFrame from "../../components/PageFrame";
+import PageFrame from "../../../components/PageFrame";
 import { useParams } from "react-router-dom";
 
 const TrainingReadingDetail = () => {
