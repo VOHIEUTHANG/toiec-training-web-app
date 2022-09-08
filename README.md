@@ -13,8 +13,8 @@ Back End :
 
 - Core: NodeJS + Express
 - Languages: Typescript
-- Database: MySQL
-- ORM: sequelize
+- Database: MongoDB + Atlas Clound
+- ODM: Mongoose 
 
 ---
 
