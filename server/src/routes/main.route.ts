@@ -7,6 +7,7 @@ router.get("/", (req, res) => {
 });
 router.get("/blogs", BlogController.getBlogPage);
 router.get("/blogs/create", BlogController.getCreateBlogPage);
+router.get("/blogs/delete/:id", BlogController.deleteBlogById);
 router.get("/blogs/:id", BlogController.getBlogById);
 
 export default router;

@@ -21,7 +21,7 @@ const TrainingListeningDetail = () => {
                 <li className="group">
                   <Link to={`/training/practice/${partID}/test1`}>
                     <div className="flex justify-between p-4 shadow-sm hover:bg-slate-50 transition">
-                      <div className="text-name text-lg ">Test 1</div>
+                      <div className="text-name text-lg ">Package 1</div>
                       <div className="test-process border border-slate-400 rounded-lg px-10 py-1 bg-[#b2f8b280]">
                         50%
                       </div>
@@ -31,7 +31,7 @@ const TrainingListeningDetail = () => {
                 <li>
                   <Link to="/">
                     <div className="flex justify-between p-4 shadow-sm hover:bg-slate-50 transition">
-                      <div className="text-name text-lg">Test 2</div>
+                      <div className="text-name text-lg">Package 2</div>
                       <div className="test-process border border-slate-400 rounded-lg px-10 py-1">
                         50%
                       </div>
@@ -41,7 +41,7 @@ const TrainingListeningDetail = () => {
                 <li>
                   <Link to="/">
                     <div className="flex justify-between p-4 shadow-sm hover:bg-slate-50 transition">
-                      <div className="text-name text-lg">Test 2</div>
+                      <div className="text-name text-lg">Package 3</div>
                       <div className="test-process border border-slate-400 rounded-lg px-10 py-1">
                         50%
                       </div>

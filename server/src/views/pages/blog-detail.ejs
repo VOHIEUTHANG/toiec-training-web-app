@@ -8,9 +8,11 @@
     <h1 class="text-center">Blog detail</h1>
       <ul>
         <li styles="margin:4px 0;"">
-          <div><%= blog.title %></div>
-          <div><%= blog?.snippet %></div>
-          <div><%= blog.body %></div>
+          <div >
+            <div><span style="color:dodgerblue">Title: </span><%= blog.title %></div>
+            <div><span style="color:dodgerblue">Body: </span><%= blog.body %></div>
+            <div><span style="color:dodgerblue">Snippet: </span><%= blog.snippet %></div>
+          </div>
         </li>
       </ul>
     </div>

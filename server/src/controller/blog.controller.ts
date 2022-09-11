@@ -34,12 +34,29 @@ class BlogController {
     const blog = new BlogModel(blogData);
     try {
       const newBlogData = await blog.save();
-      res.json({ blog: newBlogData });
+      res.redirect("/blogs");
     } catch (error) {
       console.log(
         "🚀 ~ file: blog.controller.ts ~ line 30 ~ BlogController ~ error",
         error
       );
+    }
+  }
+  async deleteBlogById(req: ReqType, res: ResType) {
+    const blogID = req.params.id;
+
+    console.log(blogID);
+    try {
+      const result = await BlogModel.findByIdAndDelete({ _id: blogID });
+      // res.json({ data: result });
+      console.log("Result: ", result);
+      res.redirect("/blogs");
+    } catch (error) {
+      console.log(
+        "🚀 ~ file: blog.controller.ts ~ line 50 ~ BlogController ~ error",
+        error
+      );
+      res.json({ message: "Cannot find blog has id ", blogID });
     }
   }
 }
