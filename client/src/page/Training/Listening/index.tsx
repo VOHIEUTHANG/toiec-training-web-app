@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import PageFrame from "../../../components/PageFrame";
 import { useParams } from "react-router-dom";
 import { Col, Row } from "antd";
 import { RightOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import { PackageType } from "../../../types";
 
 const TrainingListeningDetail = () => {
-  const { partID } = useParams();
+  const { partKey } = useParams();
+  const [packages, setPackages] = useState<PackageType[]>();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:7777/api/parts/${partKey ?? 1}`)
+      .then((result) => {
+        setPackages(result.data?.packages);
+      })
+      .catch((err) => {
+        alert(err?.message);
+      });
+  }, [partKey]);
 
   return (
     <PageFrame>
@@ -18,36 +32,23 @@ const TrainingListeningDetail = () => {
           <Col sm={24} lg={16}>
             <div className="border border-slate-200 shadow rounded-md overflow-hidden">
               <ul className="divide-y divide-slate-100">
-                <li className="group">
-                  <Link to={`/training/practice/${partID}/test1`}>
-                    <div className="flex justify-between p-4 shadow-sm hover:bg-slate-50 transition">
-                      <div className="text-name text-lg ">Package 1</div>
-                      <div className="test-process border border-slate-400 rounded-lg px-10 py-1 bg-[#b2f8b280]">
-                        50%
-                      </div>
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/">
-                    <div className="flex justify-between p-4 shadow-sm hover:bg-slate-50 transition">
-                      <div className="text-name text-lg">Package 2</div>
-                      <div className="test-process border border-slate-400 rounded-lg px-10 py-1">
-                        50%
-                      </div>
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/">
-                    <div className="flex justify-between p-4 shadow-sm hover:bg-slate-50 transition">
-                      <div className="text-name text-lg">Package 3</div>
-                      <div className="test-process border border-slate-400 rounded-lg px-10 py-1">
-                        50%
-                      </div>
-                    </div>
-                  </Link>
-                </li>
+                {packages?.map((pk) => {
+                  return (
+                    <li className="group" key={pk._id}>
+                      <Link
+                        to={`/training/practice/${partKey}/${pk.packageNumber}`}
+                      >
+                        <div className="flex justify-between p-4 shadow-sm hover:bg-slate-50 transition">
+                          <div className="text-name text-lg ">{`Package ${pk.packageNumber}`}</div>
+                          <div className="test-process border border-slate-400 rounded-lg px-10 py-1 ">
+                            {/* bg-[#b2f8b280] */}
+                            0%
+                          </div>
+                        </div>
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </Col>

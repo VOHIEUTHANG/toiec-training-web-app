@@ -2,7 +2,7 @@ import { CardListType } from "../components/CardList";
 import { TestKitListType } from "../components/TestKitList";
 const listeningTestList: CardListType = [
   {
-    href: "/training/listening/part-1",
+    href: "/training/listening/1",
     part: 1,
     title: "Photographs",
     content:

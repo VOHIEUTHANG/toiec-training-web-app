@@ -23,10 +23,10 @@ const publicRoutes: RouteType[] = [
   { path: "/documents", element: DocumentsPage },
   { path: "/user/login", element: LoginPage },
   { path: "/user/register", element: RegisterPage },
-  { path: "/training/listening/:partID", element: TrainingListeningDetail },
-  { path: "/training/reading/:partID", element: TrainingReadingDetail },
+  { path: "/training/listening/:partKey", element: TrainingListeningDetail },
+  { path: "/training/reading/:partKey", element: TrainingReadingDetail },
   {
-    path: "/training/practice/:partID/:testID",
+    path: "/training/practice/:partKey/:packageNumber",
     element: TrainingPractive,
   },
 ];

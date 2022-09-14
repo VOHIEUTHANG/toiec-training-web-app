@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router";
 import PageFrame from "../../../components/PageFrame";
 import { Row, Col, Divider } from "antd";
 import Button from "../../../components/Button";
@@ -7,6 +9,21 @@ import type { RadioChangeEvent } from "antd";
 import { Radio } from "antd";
 
 const PracticePage = () => {
+  const { packageNumber, partKey } = useParams();
+  const [currentPackage, setCurrentPackage] = useState();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:7777/api/packages/${partKey}/${packageNumber}`)
+      .then((result) => {
+        const pk = result.data;
+        console.log(pk);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   const [value, setValue] = useState<number>(0);
   const onChange = (e: RadioChangeEvent) => {
     console.log("radio checked", e.target.value);
