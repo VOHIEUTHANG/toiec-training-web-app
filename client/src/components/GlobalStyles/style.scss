@@ -76,11 +76,26 @@ li {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  @include transition;
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
   }
 }
 .text-shadow {
   text-shadow: 2px 2px 20px rgb(71, 66, 66) !important;
+}
+
+label.true .ant-radio-checked .ant-radio-inner:after {
+  background-color: rgb(137, 255, 58);
+}
+
+label.false .ant-radio-checked .ant-radio-inner:after {
+  background-color: rgb(247, 47, 21);
+}
+
+label.false .ant-radio-checked .ant-radio-inner {
+  border-color: red !important;
+}
+
+label.true .ant-radio-checked .ant-radio-inner {
+  background-color: rgb(137, 255, 58);
 }

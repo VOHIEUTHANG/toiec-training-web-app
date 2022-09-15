@@ -20,22 +20,22 @@ const Header = ({ isLogined = false }: PropsType) => {
             <ul className="nav-list flex h-full">
               <NavTab
                 dropDown={[
-                  { href: "/training/listening/part-1", title: "Photographs" },
+                  { href: "/training/listening/1", title: "Photographs" },
                   {
-                    href: "/training/listening/part-2",
+                    href: "/training/listening/2",
                     title: "Question - Response",
                   },
                   {
-                    href: "/training/listening/part-3",
+                    href: "/training/listening/3",
                     title: "Short Conversations",
                   },
-                  { href: "/training/listening/part-4", title: "Short Talks" },
+                  { href: "/training/listening/4", title: "Short Talks" },
                   {
-                    href: "/training/reading/part-5",
+                    href: "/training/reading/5",
                     title: "Incomplete Sentences",
                   },
                   {
-                    href: "/training/reading/part-6",
+                    href: "/training/reading/6",
                     title: "Text Completion",
                   },
                   {
