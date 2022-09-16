@@ -14,7 +14,7 @@ type PropsType = {
   rounded?: number;
   htmlType?: "submit";
   block?: boolean;
-  onClick?: () => void;
+  onClick?: (...rest: any) => void;
 };
 
 const Button = (props: PropsType) => {
@@ -51,7 +51,7 @@ const Button = (props: PropsType) => {
 
   return (
     <ButtonAntd
-      className="my-btn flex items-center"
+      className="my-btn flex items-center "
       {...expectProps}
       style={styles}
     >
