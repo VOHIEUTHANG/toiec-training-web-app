@@ -46,7 +46,7 @@ const PracticePage = () => {
   useEffect(() => {
     const checkedRadio = document.querySelector(".ant-radio.ant-radio-checked");
     checkedRadio?.classList.remove("ant-radio-checked");
-  });
+  }, [answerStatus]);
 
   const questionsCount = useMemo(
     () => currentPackage?.questions?.length,
@@ -225,7 +225,6 @@ const PracticePage = () => {
                           });
                           setCurrentAnswerKey(undefined);
                           setAnswerStatus(undefined);
-                          // resetRadio();
                         }
                       }}
                       rounded={2}
