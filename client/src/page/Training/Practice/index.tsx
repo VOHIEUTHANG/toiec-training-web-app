@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router";
@@ -12,7 +12,7 @@ import { PackageDetailsType, PartType } from "../../../types";
 
 const PracticePage = () => {
   const { packageNumber, partKey } = useParams();
-
+  const audioRef = useRef(null);
   const [currentPackage, setCurrentPackage] = useState<PackageDetailsType>();
   const [currentQuestionNum, setCurentQuestionNum] = useState<number>(1);
   const [part, setPart] = useState<PartType>();
@@ -42,6 +42,11 @@ const PracticePage = () => {
         alert(err?.message);
       });
   }, [partKey]);
+
+  useEffect(() => {
+    const checkedRadio = document.querySelector(".ant-radio.ant-radio-checked");
+    checkedRadio?.classList.remove("ant-radio-checked");
+  });
 
   const questionsCount = useMemo(
     () => currentPackage?.questions?.length,
@@ -145,6 +150,9 @@ const PracticePage = () => {
               </div>
               <div className="flex justify-center my-6">
                 <audio
+                  autoPlay={true}
+                  ref={audioRef}
+                  id="main-voice"
                   controls
                   src={getCurrentQuestion(currentQuestionNum)?.audio}
                 ></audio>
@@ -169,6 +177,7 @@ const PracticePage = () => {
                           lg={6}
                         >
                           <Radio
+                            checked={false}
                             disabled={
                               currentAnswerKey === undefined
                                 ? false
@@ -214,9 +223,9 @@ const PracticePage = () => {
                             }
                             return prevalue;
                           });
-
                           setCurrentAnswerKey(undefined);
                           setAnswerStatus(undefined);
+                          // resetRadio();
                         }
                       }}
                       rounded={2}
@@ -239,7 +248,7 @@ const PracticePage = () => {
                         return (
                           <li
                             key={answer._id}
-                            className={`text-lg ${
+                            className={`text-lg  ${
                               currentAnswerKey == answer.key
                                 ? "text-red-400"
                                 : ""
