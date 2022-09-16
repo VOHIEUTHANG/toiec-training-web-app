@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import PageFrame from "../../../components/PageFrame";
 import { Row, Col, Divider } from "antd";
 import Button from "../../../components/Button";
-import { ReloadOutlined } from "@ant-design/icons";
+import { ReloadOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import { Radio } from "antd";
 
 import { PackageDetailsType, PartType } from "../../../types";
@@ -41,7 +41,7 @@ const PracticePage = () => {
       .catch((err) => {
         alert(err?.message);
       });
-  }, [partKey, packageNumber]);
+  }, [partKey]);
 
   const questionsCount = useMemo(
     () => currentPackage?.questions?.length,
@@ -96,7 +96,16 @@ const PracticePage = () => {
                 </div>
               </div>
               <div className="flex justify-end mt-8">
-                <Button rounded={24} type="outline" icon={<ReloadOutlined />}>
+                <Button
+                  onClick={() => {
+                    setCurentQuestionNum(1);
+                    setCurrentAnswerKey(undefined);
+                    setAnswerStatus(undefined);
+                  }}
+                  rounded={24}
+                  type="outline"
+                  icon={<ReloadOutlined />}
+                >
                   Restart
                 </Button>
               </div>
@@ -126,7 +135,7 @@ const PracticePage = () => {
             <div className="bg-white rounded border border-slate-200 p-6 ">
               <div className="mb-2 text-lg">Question {currentQuestionNum}</div>
               <div className="flex justify-center">
-                <div className="m-w-[60%] m-h[400px]">
+                <div className="max-w-[60%] max-h-[320px]">
                   <img
                     className="img-styles"
                     src={getCurrentQuestion(currentQuestionNum)?.photo}
@@ -149,16 +158,10 @@ const PracticePage = () => {
                       return (
                         <Col
                           onClick={function (e) {
-                            console.log(e.target);
-                            if (
-                              (e.target as Element).classList.contains(
-                                ".ant-radio-wrapper-disabled"
-                              )
-                            ) {
-                              console.log("123");
+                            if (currentAnswerKey === undefined) {
+                              setAnswerStatus(answer.result);
+                              setCurrentAnswerKey(answer.key);
                             }
-                            setAnswerStatus(answer.result);
-                            setCurrentAnswerKey(answer.key);
                           }}
                           key={answer._id}
                           xs={24}
@@ -199,28 +202,55 @@ const PracticePage = () => {
               {answerStatus !== undefined && (
                 <div className="mx-8 my-4">
                   <Divider />
-                  <div>
-                    {
-                      getCurrentQuestion(currentQuestionNum)?.answerSheetList[0]
-                        .question
-                    }
+                  <div className="mb-6 flex justify-center">
+                    <Button
+                      size="lg"
+                      type="outline"
+                      onClick={() => {
+                        if (currentQuestionNum < Number(questionsCount)) {
+                          setCurentQuestionNum((prevalue) => {
+                            if (prevalue < Number(questionsCount)) {
+                              return prevalue + 1;
+                            }
+                            return prevalue;
+                          });
+
+                          setCurrentAnswerKey(undefined);
+                          setAnswerStatus(undefined);
+                        }
+                      }}
+                      rounded={2}
+                      icon={<ArrowRightOutlined />}
+                    >
+                      Next Question
+                    </Button>
                   </div>
-                  <ul>
-                    {getCurrentQuestion(
-                      currentQuestionNum
-                    )?.answerSheetList[0].answerList.map((answer) => {
-                      return (
-                        <li
-                          key={answer._id}
-                          className={`text-lg ${
-                            currentAnswerKey == answer.key ? "text-red-400" : ""
-                          } ${answer.result && "text-green-600"}`}
-                        >
-                          {answer.key + ". " + answer.value}
-                        </li>
-                      );
-                    })}
-                  </ul>
+                  <div className="paper shadow">
+                    <div>
+                      {
+                        getCurrentQuestion(currentQuestionNum)
+                          ?.answerSheetList[0].question
+                      }
+                    </div>
+                    <ul>
+                      {getCurrentQuestion(
+                        currentQuestionNum
+                      )?.answerSheetList[0].answerList.map((answer) => {
+                        return (
+                          <li
+                            key={answer._id}
+                            className={`text-lg ${
+                              currentAnswerKey == answer.key
+                                ? "text-red-400"
+                                : ""
+                            } ${answer.result && "text-green-600"}`}
+                          >
+                            {answer.key + ". " + answer.value}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
                 </div>
               )}
             </div>
