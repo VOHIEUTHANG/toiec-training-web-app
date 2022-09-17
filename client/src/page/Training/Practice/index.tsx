@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useParams } from "react-router";
+import { useParams, useLocation } from "react-router";
 import PageFrame from "../../../components/PageFrame";
 import { Row, Col, Divider } from "antd";
 import Button from "../../../components/Button";
@@ -11,12 +11,16 @@ import { Radio } from "antd";
 import { PackageDetailsType, PartType } from "../../../types";
 
 const PracticePage = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const { packageNumber, partKey } = useParams();
   const audioRef = useRef(null);
   const [currentPackage, setCurrentPackage] = useState<PackageDetailsType>();
   const [currentQuestionNum, setCurentQuestionNum] = useState<number>(1);
   const [part, setPart] = useState<PartType>();
-  const [answerCount, setAnswerCount] = useState<number>(0);
+
+  const [correctCount, setCorrectCount] = useState<number>(0);
+  const [incorrectCount, setIncorrectCount] = useState<number>(0);
 
   const [answerStatus, setAnswerStatus] = useState<Boolean | undefined>();
   const [currentAnswerKey, setCurrentAnswerKey] = useState<string>();
@@ -92,12 +96,12 @@ const PracticePage = () => {
                 <div>
                   <span className="w-[10px] h-[10px] bg-green inline-block mr-2"></span>
                   <span>Correct: </span>
-                  <span>{`0/${questionsCount}`}</span>
+                  <span>{`${correctCount}/${questionsCount}`}</span>
                 </div>
                 <div>
                   <span className="w-[10px] h-[10px] bg-red-500 inline-block mr-2"></span>
                   <span>Incorrect: </span>
-                  <span>{`0/${questionsCount}`}</span>
+                  <span>{`${incorrectCount}/${questionsCount}`}</span>
                 </div>
               </div>
               <div className="flex justify-end mt-8">
@@ -167,8 +171,13 @@ const PracticePage = () => {
                         <Col
                           onClick={function (e) {
                             if (currentAnswerKey === undefined) {
-                              setAnswerStatus(answer.result);
                               setCurrentAnswerKey(answer.key);
+                              setAnswerStatus(answer.result);
+                              if (answer.result !== false) {
+                                setCorrectCount((preValue) => preValue + 1);
+                              } else {
+                                setIncorrectCount((preValue) => preValue + 1);
+                              }
                             }
                           }}
                           key={answer._id}
@@ -211,7 +220,16 @@ const PracticePage = () => {
               {answerStatus !== undefined && (
                 <div className="mx-8 my-4">
                   <Divider />
-                  <div className="mb-6 flex justify-center">
+
+                  <div className="mb-6 flex justify-around">
+                    {currentQuestionNum === questionsCount && (
+                      <div className="uppercase flex items-center text-md px-4 rounded shadow border bg-green-50 border-gray-light">
+                        Correct |
+                        <span className="text-green-500 ml-1">
+                          {correctCount}
+                        </span>
+                      </div>
+                    )}
                     <Button
                       size="lg"
                       type="outline"
@@ -225,13 +243,44 @@ const PracticePage = () => {
                           });
                           setCurrentAnswerKey(undefined);
                           setAnswerStatus(undefined);
+                        } else {
+                          const currentLocation = location.pathname;
+
+                          const updateNewLocation: (s: string) => string = (
+                            currentLocation: string
+                          ) => {
+                            const indexOfLastSplashSymbol =
+                              currentLocation.lastIndexOf("/");
+                            const packageNumber = parseInt(
+                              currentLocation.slice(indexOfLastSplashSymbol + 1)
+                            );
+                            const newLocation =
+                              currentLocation.slice(
+                                0,
+                                indexOfLastSplashSymbol
+                              ) +
+                              "/" +
+                              String(packageNumber + 1);
+                            return newLocation;
+                          };
+                          navigate(updateNewLocation(currentLocation));
                         }
                       }}
                       rounded={2}
                       icon={<ArrowRightOutlined />}
                     >
-                      Next Question
+                      {currentQuestionNum === questionsCount
+                        ? "Next Package"
+                        : "Next Question"}
                     </Button>
+                    {currentQuestionNum === questionsCount && (
+                      <div className="uppercase flex items-center text-md px-4 rounded shadow border bg-red-50 border-gray-light">
+                        Incoorrect |
+                        <span className="text-red-500 ml-1">
+                          {incorrectCount}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div className="paper shadow">
                     <div>
