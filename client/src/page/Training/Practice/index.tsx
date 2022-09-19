@@ -15,15 +15,21 @@ const PracticePage = () => {
   const location = useLocation();
   const { packageNumber, partKey } = useParams();
   const audioRef = useRef(null);
+  const [part, setPart] = useState<PartType>();
   const [currentPackage, setCurrentPackage] = useState<PackageDetailsType>();
   const [currentQuestionNum, setCurentQuestionNum] = useState<number>(1);
-  const [part, setPart] = useState<PartType>();
 
   const [correctCount, setCorrectCount] = useState<number>(0);
   const [incorrectCount, setIncorrectCount] = useState<number>(0);
 
   const [answerStatus, setAnswerStatus] = useState<Boolean | undefined>();
   const [currentAnswerKey, setCurrentAnswerKey] = useState<string>();
+
+  const reset = () => {
+    setCurentQuestionNum(1);
+    setAnswerStatus(undefined);
+    setCurrentAnswerKey(undefined);
+  };
 
   useEffect(() => {
     axios
@@ -50,7 +56,7 @@ const PracticePage = () => {
   useEffect(() => {
     const checkedRadio = document.querySelector(".ant-radio.ant-radio-checked");
     checkedRadio?.classList.remove("ant-radio-checked");
-  }, [answerStatus]);
+  }, [answerStatus, currentPackage]);
 
   const questionsCount = useMemo(
     () => currentPackage?.questions?.length,
@@ -107,9 +113,7 @@ const PracticePage = () => {
               <div className="flex justify-end mt-8">
                 <Button
                   onClick={() => {
-                    setCurentQuestionNum(1);
-                    setCurrentAnswerKey(undefined);
-                    setAnswerStatus(undefined);
+                    reset();
                   }}
                   rounded={24}
                   type="outline"
@@ -125,6 +129,9 @@ const PracticePage = () => {
                   return (
                     <Col sm={16} xl={8} key={pk._id}>
                       <Link
+                        onClick={() => {
+                          reset();
+                        }}
                         to={`/training/practice/${partKey}/${pk.packageNumber}`}
                         className={` hover:bg-slate-100 hover:color-primary-color ${
                           pk.packageNumber === Number(packageNumber)
@@ -220,7 +227,6 @@ const PracticePage = () => {
               {answerStatus !== undefined && (
                 <div className="mx-8 my-4">
                   <Divider />
-
                   <div className="mb-6 flex justify-around">
                     {currentQuestionNum === questionsCount && (
                       <div className="uppercase flex items-center text-md px-4 rounded shadow border bg-green-50 border-gray-light">
@@ -245,7 +251,6 @@ const PracticePage = () => {
                           setAnswerStatus(undefined);
                         } else {
                           const currentLocation = location.pathname;
-
                           const updateNewLocation: (s: string) => string = (
                             currentLocation: string
                           ) => {
@@ -263,7 +268,18 @@ const PracticePage = () => {
                               String(packageNumber + 1);
                             return newLocation;
                           };
-                          navigate(updateNewLocation(currentLocation));
+
+                          if (
+                            Number(
+                              part?.packages[part.packages.length - 1]
+                                .packageNumber
+                            ) <= Number(packageNumber)
+                          ) {
+                            console.log("Maximun package !");
+                          } else {
+                            navigate(updateNewLocation(currentLocation));
+                            reset();
+                          }
                         }
                       }}
                       rounded={2}
@@ -282,6 +298,7 @@ const PracticePage = () => {
                       </div>
                     )}
                   </div>
+                  ''
                   <div className="paper shadow">
                     <div>
                       {
