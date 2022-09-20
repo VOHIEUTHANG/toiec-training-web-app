@@ -114,4 +114,210 @@ const tipsCardList: TipsCartType[] = [
   },
 ];
 
-export { listeningTestList, readingTestList, testKitList, tipsCardList };
+const vocabularyCardList: TipsCartType[] = [
+  {
+    href: "/vocabulary/part-key/1",
+    part: 1,
+    imgUrl:
+      "https://blog.toeic-testpro.com/wp-content/uploads/2021/12/vocabulary-toeic-part-1.jpg",
+    name: "Common Vocabulary For TOEIC",
+    desc: "Although Part 1 is considered the least challenging part in the Toeic exam, it’s necessary to prepare knowledge as well as strategies to get a high score. Apart from having a thorough understanding of the test format, you also need to boost your vocabulary. Here are common vocabulary in Toeic part 1 that you can refer to.",
+  },
+  {
+    href: "/vocabulary/part-key/2",
+    part: 2,
+    imgUrl:
+      "https://blog.toeic-testpro.com/wp-content/uploads/2021/12/vocabulary-part-2.jpg",
+    name: "Common Vocabulary For TOEIC",
+    desc: "For people who want to master English in general and achieve the Toeic target score in particular, boosting vocabulary is really important.This article will introduce common vocabulary for Toeic part 2. Hopefully, it will help you enhance your score in this part.",
+  },
+  {
+    href: "/vocabulary/part-key/3",
+    part: 3,
+    imgUrl:
+      "https://blog.toeic-testpro.com/wp-content/uploads/2021/12/vocabulary-part-3.png",
+    name: "Common Vocabulary For TOEIC",
+    desc: "Part 3 is one of the most challenging parts in the Toeic exam since answers are often paraphrased. To gain a high score in Part 3, cultivating vocabulary is really essential. This article will give common vocabulary for Toeic part 3.",
+  },
+];
+
+const vocabularyPart1People: { word: string; meaning: string; type: string }[] =
+  [
+    {
+      word: "nod",
+      meaning: "gật đầu",
+      type: "Nound",
+    },
+    {
+      word: "shake",
+      meaning: "rung",
+      type: "Verb",
+    },
+    {
+      word: "tilt",
+      meaning: "nghiên",
+      type: "Verb",
+    },
+    {
+      word: "cry",
+      meaning: "khóc",
+      type: "Verb",
+    },
+    {
+      word: "look at",
+      meaning: "nhìn vào",
+      type: "Verb",
+    },
+    {
+      word: "observe",
+      meaning: "quan sát",
+      type: "Verb",
+    },
+    {
+      word: "smell",
+      meaning: "mùi",
+      type: "Nound",
+    },
+    {
+      word: "sneeze",
+      meaning: "hắc hơi",
+      type: "Verb",
+    },
+    {
+      word: "clap",
+      meaning: "vỗ tay",
+      type: "Verb",
+    },
+    {
+      word: "grab",
+      meaning: "vồ lấy",
+      type: "Verb",
+    },
+    {
+      word: "hold",
+      meaning: "giữ",
+      type: "Verb",
+    },
+    {
+      word: "lift",
+      meaning: "nâng lên",
+      type: "Verb",
+    },
+    {
+      word: "press",
+      meaning: "nhấn",
+      type: "Verb",
+    },
+    {
+      word: "throw",
+      meaning: "ném",
+      type: "Verb",
+    },
+    {
+      word: "throw",
+      meaning: "ném",
+      type: "Verb",
+    },
+    {
+      word: "wink",
+      meaning: "nháy mắt",
+      type: "Nound",
+    },
+    {
+      word: "laungh",
+      meaning: "cười",
+      type: "Verb",
+    },
+  ];
+
+const vocabularyPart1Objects: {
+  word: string;
+  meaning: string;
+  type: string;
+}[] = [
+  {
+    word: "computer",
+    meaning: "máy tính",
+    type: "Nound",
+  },
+  {
+    word: "monitor",
+    meaning: "màn hình",
+    type: "Nound",
+  },
+  {
+    word: "fountain",
+    meaning: "đài phun nước",
+    type: "Nound",
+  },
+  {
+    word: "couch",
+    meaning: "đi văng",
+    type: "Nuond",
+  },
+  {
+    word: "furniture",
+    meaning: "đồ nội thất",
+    type: "Nound",
+  },
+  {
+    word: "observe",
+    meaning: "quan sát",
+    type: "Verb",
+  },
+  {
+    word: "traffic jam",
+    meaning: "tắc đường",
+    type: "Nound",
+  },
+  {
+    word: "be lined up in rows",
+    meaning: "được xếp thành hàng",
+    type: "pharve",
+  },
+  {
+    word: "be unoccupied",
+    meaning: "không có người ở",
+    type: "pharve",
+  },
+  {
+    word: "construction site",
+    meaning: "công trường",
+    type: "Nound",
+  },
+  {
+    word: "ladder",
+    meaning: "thang",
+    type: "Nound",
+  },
+  {
+    word: "dig",
+    meaning: "đào đất",
+    type: "Verb",
+  },
+  {
+    word: "shovel",
+    meaning: "xẻng",
+    type: "Nound",
+  },
+  {
+    word: "pave the road",
+    meaning: "mở đường",
+    type: "pharve",
+  },
+  {
+    word: "push the wheelbarrow",
+    meaning: "đẩy xe cút kít",
+    type: "pharve",
+  },
+];
+
+export {
+  listeningTestList,
+  readingTestList,
+  testKitList,
+  tipsCardList,
+  vocabularyCardList,
+  vocabularyPart1People,
+  vocabularyPart1Objects,
+};

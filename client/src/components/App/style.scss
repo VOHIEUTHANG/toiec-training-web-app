@@ -36,3 +36,6 @@
 .primaty-title {
   @apply text-4xl font-semibold mb-8 text-primary-color-strong;
 }
+.flipCard {
+  @apply absolute inset-0 rounded-xl shadow-xl border border-gray-light justify-center items-center flex text-2xl;
+}

@@ -60,7 +60,7 @@ const Header = ({ isLogined = false }: PropsType) => {
                 Mock Test
               </NavTab>
               <NavTab to="/toiec-tips">Toiec Tips</NavTab>
-              <NavTab to="/documents">Documents</NavTab>
+              <NavTab to="/vocabulary">Vocabulary</NavTab>
             </ul>
           </div>
           <div className="user">
