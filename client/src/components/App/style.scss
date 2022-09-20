@@ -33,3 +33,6 @@
 .paper {
   @apply border border-slate-200 rounded-xl p-4 bg-white;
 }
+.primaty-title {
+  @apply text-4xl font-semibold mb-8 text-primary-color-strong;
+}

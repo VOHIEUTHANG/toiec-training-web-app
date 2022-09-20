@@ -1,5 +1,6 @@
 import { CardListType } from "../components/CardList";
 import { TestKitListType } from "../components/TestKitList";
+import { TipsCartType } from "../components/TipsCard";
 const listeningTestList: CardListType = [
   {
     href: "/training/listening/1",
@@ -86,4 +87,31 @@ const testKitList: TestKitListType = [
   },
 ];
 
-export { listeningTestList, readingTestList, testKitList };
+const tipsCardList: TipsCartType[] = [
+  {
+    href: "/toiec-tips/part-key/1",
+    part: 1,
+    imgUrl:
+      "https://blog.toeic-testpro.com/wp-content/uploads/2021/10/toeic-listening-part-1.jpg",
+    name: "Overview And Tips To Get High Scores",
+    desc: "Toeic Listening Part 1 (Photographs) is considered an easy part in the TOEIC exam. However, not everyone knows techniques and strategies to get a maximum score in this part. Scroll down this article to know more information",
+  },
+  {
+    href: "/toiec-tips/part-key/2",
+    part: 2,
+    imgUrl:
+      "https://blog.toeic-testpro.com/wp-content/uploads/2021/10/toeic-listening-part-2-1.jpg",
+    name: "Overview, Tips And Tricks",
+    desc: "Toeic Listening Part 2 (Question – Response) is not the most difficult section of the TOEIC test, however, it sometimes makes candidates confused. In this article, I will give you a close insight into the format of TOEIC Listening part 2 as well as tips and tricks in this part. ",
+  },
+  {
+    href: "/toiec-tips/part-key/3",
+    part: 3,
+    imgUrl:
+      "https://blog.toeic-testpro.com/wp-content/uploads/2021/10/toeic-listening-part-3.jpg",
+    name: "Overview, Tips And Tricks",
+    desc: "Toeic Listening Part 3 (Conversations) is one of the most challenging parts in the Toeic exam because audioes are quite long with two or three people participating in the conversation",
+  },
+];
+
+export { listeningTestList, readingTestList, testKitList, tipsCardList };
