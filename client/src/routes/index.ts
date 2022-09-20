@@ -9,6 +9,8 @@ import TrainingListeningDetail from "../page/Training/Listening";
 import TrainingReadingDetail from "../page/Training/Reading";
 import TrainingPractive from "../page/Training/Practice";
 import ToiecTipsPageDetail from "../page/ToiecTipsDetail";
+import VocabularyDetail from "../page/VocabularyDetail";
+
 type RouteType = {
   path: string;
   element: () => JSX.Element;
@@ -22,7 +24,8 @@ const publicRoutes: RouteType[] = [
   { path: "/toiec-tips/part-key/:partKey", element: ToiecTipsPageDetail },
   { path: "/mock-test", element: MockTestPage },
   { path: "/mock-test", element: MockTestPage },
-  { path: "/documents", element: DocumentsPage },
+  { path: "/vocabulary", element: DocumentsPage },
+  { path: "/vocabulary/part-key/:partKey", element: VocabularyDetail },
   { path: "/user/login", element: LoginPage },
   { path: "/user/register", element: RegisterPage },
   { path: "/training/listening/:partKey", element: TrainingListeningDetail },

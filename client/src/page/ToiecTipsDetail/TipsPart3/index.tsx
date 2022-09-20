@@ -113,7 +113,7 @@ const TipsPart3 = (props: Props) => {
           <p>
             Conversations in part 3 are often requirements or questions. Hence,
             you can get the correct answer for the first question if you listen
-            carefully to the first part of the conversation.{" "}
+            carefully to the first part of the conversation.
           </p>
           <p>
             For inference questions, you also need to listen to the conversation
