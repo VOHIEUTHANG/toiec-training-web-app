@@ -312,6 +312,86 @@ const vocabularyPart1Objects: {
   },
 ];
 
+const vocabularyPart2: {
+  word: string;
+  meaning: string;
+  type: string;
+}[] = [
+  {
+    word: "proposal",
+    meaning: "đề nghị",
+    type: "Nound",
+  },
+  {
+    word: "go over",
+    meaning: "đi qua",
+    type: "Verb",
+  },
+  {
+    word: "laboratory",
+    meaning: "phòng thí nghiệm",
+    type: "Verb",
+  },
+  {
+    word: "expert",
+    meaning: "chuyên gia",
+    type: "Verb",
+  },
+  {
+    word: "consult",
+    meaning: "than khảo",
+    type: "Verb",
+  },
+  {
+    word: "come by",
+    meaning: "ghé qua",
+    type: "Verb",
+  },
+  {
+    word: "emergency exit",
+    meaning: "cửa thoát hiểm",
+    type: "Nound",
+  },
+  {
+    word: "out of stock",
+    meaning: "hết hàng",
+    type: "Nound",
+  },
+  {
+    word: "merger",
+    meaning: "sáp nhập",
+    type: "Nound",
+  },
+  {
+    word: "dozen",
+    meaning: "một tá",
+    type: "Nound",
+  },
+  {
+    word: "real estate agent",
+    meaning: "đại lý bất động sản",
+    type: "Nound",
+  },
+  {
+    word: "manuscript",
+    meaning: "bản thảo",
+    type: "Nound",
+  },
+  { word: "press release", meaning: "thông cáo báo chí", type: "Nound" },
+  { word: "crew", meaning: "phi hành đoàn", type: "Nound" },
+  { word: "renovation", meaning: "cải tạo", type: "Verb" },
+  { word: "downstairs", meaning: "tầng dưới", type: "Nound" },
+  { word: "bulletin board", meaning: "bảng tin", type: "Nound" },
+  { word: "receptionist", meaning: "lễ tân", type: "Nound" },
+  { word: "general director", meaning: "tổng giám đốc", type: "Nound" },
+  { word: "secretary", meaning: "thư ký", type: "Nound" },
+  { word: "maintenance department", meaning: "bộ phận bảo trì", type: "Nound" },
+  { word: "bankrupt", meaning: "phá sản", type: "Nound" },
+  { word: "deposit", meaning: "đặt cọc", type: "Nound" },
+  { word: "shareholder", meaning: "cổ đông", type: "Nound" },
+  { word: "dividend", meaning: "cổ tức", type: "Nound" },
+  { word: "liquidity", meaning: "thanh khoản", type: "Nound" },
+];
 export {
   listeningTestList,
   readingTestList,
@@ -320,4 +400,5 @@ export {
   vocabularyCardList,
   vocabularyPart1People,
   vocabularyPart1Objects,
+  vocabularyPart2,
 };
