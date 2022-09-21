@@ -1,26 +1,26 @@
 import { Row, Col } from "antd";
 import { SectionParent } from "../../ToiecTipsDetail/subComponents";
-import { vocabularyPart2 } from "../../../data";
+import { vocabularyPart3 } from "../../../data";
 
-const vocabularyPart1 = () => {
+const VocabularyPart3 = () => {
   return (
     <div>
-      <SectionParent title="1. Toeic part 2 format">
+      <SectionParent title="1. TOEIC PART 3 FORMAT">
         <p>
-          The Toeic part 2 includes 25 questions. For each question, you have to
-          listen to a question and 3 possible responses. Then you have to choose
-          the best response for the question.
+          In the Toeic part 3, you will have to hear 13 conversations. Each
+          conversation consists of 3 questions. For each question, select the
+          best answer that you think fits best according to what you hear.
         </p>
       </SectionParent>
-      <SectionParent title="2. Common vocabulary for Toeic part 2">
+      <SectionParent title="2. Common vocabulary for Toeic part 3">
         <p>
           <i className="my-4 block text-xl text-secondary-color">
-            Here are common vocabulary in part2
+            Here are common vocabulary in part 3
           </i>
         </p>
         <div className="my-8">
           <Row gutter={[16, 16]}>
-            {vocabularyPart2.map((item) => {
+            {vocabularyPart3.map((item) => {
               return (
                 <Col xs={24} sm={12} md={8} lg={6} xl={4}>
                   <div className="relative flip-wrapper w-full aspect-square">
@@ -46,4 +46,4 @@ const vocabularyPart1 = () => {
   );
 };
 
-export default vocabularyPart1;
+export default VocabularyPart3;
