@@ -392,6 +392,218 @@ const vocabularyPart2: {
   { word: "dividend", meaning: "cổ tức", type: "Nound" },
   { word: "liquidity", meaning: "thanh khoản", type: "Nound" },
 ];
+
+const vocabularyPart3: {
+  word: string;
+  meaning: string;
+  type: string;
+}[] = [
+  {
+    word: "junior",
+    meaning: "trẻ con",
+    type: "Nound",
+  },
+  {
+    word: "transfer",
+    meaning: "chuyển giao",
+    type: "Nound",
+  },
+  {
+    word: "short-staffed",
+    meaning: "biên chế ngắn",
+    type: "Nound",
+  },
+  {
+    word: "supervisor",
+    meaning: "người quan sát",
+    type: "Nound",
+  },
+  {
+    word: "boss",
+    meaning: "xếp",
+    type: "Nound",
+  },
+  {
+    word: "sales representative ",
+    meaning: "người đại diện bán hàng",
+    type: "Nound",
+  },
+  {
+    word: "security officer",
+    meaning: "nhân viên an ninh",
+    type: "Nound",
+  },
+  {
+    word: "administrative assistant",
+    meaning: "trợ lý hành chính",
+    type: "Nound",
+  },
+  {
+    word: "store clerk",
+    meaning: "nhân viên bán hàng",
+    type: "Nound",
+  },
+  {
+    word: "personnel",
+    meaning: "nhân viên",
+    type: "Nound",
+  },
+  {
+    word: "salesperson ",
+    meaning: "nhân viên bán hàng",
+    type: "Nound",
+  },
+  {
+    word: "crew",
+    meaning: "phi hành đoàn",
+    type: "Nound",
+  },
+  {
+    word: "coworker",
+    meaning: "đồng nghiệp",
+    type: "Nound",
+  },
+  {
+    word: "colleague",
+    meaning: "đồng nghiệp",
+    type: "Nound",
+  },
+  {
+    word: "plumber",
+    meaning: "thợ sửa ống nước",
+    type: "Nound",
+  },
+  {
+    word: "receptionist",
+    meaning: "lễ tân",
+    type: "Nound",
+  },
+  {
+    word: "automatic mechanic",
+    meaning: "thợ máy tự động",
+    type: "Nound",
+  },
+  {
+    word: "fill out an application",
+    meaning: "điền vào đơn xin việc",
+    type: "Nound",
+  },
+  {
+    word: "cover letter",
+    meaning: "thư xin việc",
+    type: "Nound",
+  },
+  {
+    word: "candidate",
+    meaning: "ứng viên",
+    type: "Nound",
+  },
+  {
+    word: "qualifications",
+    meaning: "trình độ chuyên môn",
+    type: "Nound",
+  },
+  {
+    word: "certificate",
+    meaning: "chứng chỉ",
+    type: "Nound",
+  },
+  {
+    word: "company poilcy",
+    meaning: "chính sách của công ty",
+    type: "Nound",
+  },
+  {
+    word: "be entitled to V",
+    meaning: "được quyền làm gi đó",
+    type: "Nound",
+  },
+  {
+    word: "replacement",
+    meaning: "sự thay thế",
+    type: "Nound",
+  },
+  {
+    word: "annual salary ",
+    meaning: "mức lương hàng năm",
+    type: "Nound",
+  },
+  {
+    word: "vacancy",
+    meaning: "vị trí còn trống",
+    type: "Nound",
+  },
+  {
+    word: "workplace",
+    meaning: "nơi làm việc",
+    type: "Nound",
+  },
+  {
+    word: "working conditions",
+    meaning: "điều kiện làm việc",
+    type: "Nound",
+  },
+  {
+    word: "reception desk ",
+    meaning: "bàn lễ tân",
+    type: "Nound",
+  },
+  {
+    word: "minimum requirements",
+    meaning: "yêu cần tối thiểu",
+    type: "Nound",
+  },
+  {
+    word: "inventory",
+    meaning: "hàng tồn kho",
+    type: "Nound",
+  },
+  {
+    word: "refund",
+    meaning: "hoàn tiền",
+    type: "Nound",
+  },
+  {
+    word: "manufacturer",
+    meaning: "nhà chế tạo",
+    type: "Nound",
+  },
+  {
+    word: "warehouse",
+    meaning: "kho",
+    type: "Nound",
+  },
+  {
+    word: "stockroom",
+    meaning: "kho chứa hàng",
+    type: "Nound",
+  },
+  {
+    word: "expedite",
+    meaning: "thúc giục",
+    type: "Nound",
+  },
+  {
+    word: "defects",
+    meaning: "khuyết tật",
+    type: "Nound",
+  },
+  {
+    word: "warranty",
+    meaning: "sự đảm bảo",
+    type: "Nound",
+  },
+  {
+    word: "rebate",
+    meaning: "hạ giá",
+    type: "Nound",
+  },
+  {
+    word: "registration",
+    meaning: "sự đăng ký",
+    type: "Nound",
+  },
+];
 export {
   listeningTestList,
   readingTestList,
@@ -401,4 +613,5 @@ export {
   vocabularyPart1People,
   vocabularyPart1Objects,
   vocabularyPart2,
+  vocabularyPart3,
 };

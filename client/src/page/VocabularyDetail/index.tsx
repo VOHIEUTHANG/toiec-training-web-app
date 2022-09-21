@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import PageFrame from "../../components/PageFrame";
 import VocabularyPart1 from "./VocabularyPart1";
 import VocabularyPart2 from "./VocabularyPart2";
+import VocabularyPart3 from "./VocabularyPart3";
 
 import "./styles.scss";
 
@@ -19,8 +20,10 @@ const VocabularyDetail = () => {
           <VocabularyPart1 />
         ) : Number(partKey) === 2 ? (
           <VocabularyPart2 />
+        ) : Number(partKey) == 3 ? (
+          <VocabularyPart3 />
         ) : (
-          <div></div>
+          <div>Vocabulary for part ${partKey} not found 1</div>
         )}
       </div>
     </PageFrame>
